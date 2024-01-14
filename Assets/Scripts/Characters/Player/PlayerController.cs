@@ -117,6 +117,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         mngr.ui.SetEnergyBarMaxValue(maxEnergy);
         energy = maxEnergy;
         mngr.ui.SetDashCooldownBarMaxValue(dashCooldown);
+
+        dashCooldownTimer = dashCooldown;
     }
 
     private void HandlePermits()
