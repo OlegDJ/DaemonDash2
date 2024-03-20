@@ -25,12 +25,12 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""Controls"",
-            ""id"": ""6aa0d5c0-4475-4e5f-b282-08cbf452caa3"",
+            ""id"": ""997cc764-85d8-41e9-a84b-c80911730c94"",
             ""actions"": [
                 {
                     ""name"": ""Movement"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""d0fc48a8-5002-4561-b779-7b30064f1630"",
+                    ""id"": ""5371732e-64e1-4f68-b403-14680de2a1f6"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -39,26 +39,35 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Rotation"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""dd600bb6-18c3-4df9-bb8c-175cca0e05ee"",
+                    ""id"": ""58ba4233-f9bf-4975-8d65-dd44bc97ffe5"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Run"",
                     ""type"": ""Button"",
-                    ""id"": ""6dbc22b1-5bea-4d82-8d4d-8230284d2037"",
+                    ""id"": ""dcdbc562-384b-49e1-a0c4-0d8653bf5dc3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""87606fe8-9ce7-4274-87e5-22e14263722c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": ""Keyboard"",
-                    ""id"": ""84436fef-45ce-430f-8e38-e726bef5c778"",
+                    ""id"": ""93e3b25c-6d31-4420-83d7-e0b9e925fca3"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -69,7 +78,7 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""c9cd342c-8553-4374-aa8f-7b4c7d9b0b3c"",
+                    ""id"": ""97f87e9c-3290-41d6-8b56-3d33589d65dd"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -80,7 +89,7 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""1fb71c1c-29e8-4801-8744-5ff75d50124f"",
+                    ""id"": ""7479ac0b-b02d-4b67-93ed-ec4fd43f91d9"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -91,7 +100,7 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""eed05d95-51d3-4c00-ac5d-dc73d7360770"",
+                    ""id"": ""c710af19-034c-4f0d-ba96-4cb50e28f7b0"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -102,7 +111,7 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""0f42ce8f-a08c-4807-9b87-212fe18342bf"",
+                    ""id"": ""e76c42ee-f700-4305-8e93-599be1afe6c2"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -113,10 +122,21 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""86ae703d-e3db-4f5f-a495-e27413e0dee7"",
+                    ""id"": ""d15a6cb6-22b7-46b5-8078-0274df7b059f"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone(max=1)"",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2127f194-3fda-4c31-8189-df931a1ed76e"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=0.03,y=0.03)"",
+                    ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Rotation"",
                     ""isComposite"": false,
@@ -124,8 +144,52 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""696724e9-b83f-4e5c-88b4-5f10d69dc398"",
+                    ""id"": ""0392324f-d6a9-4f3c-849d-414768eb66dd"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone(max=1),ScaleVector2(x=15,y=15)"",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8a182632-9ba4-41d8-9e07-264ea9e20f56"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d17168e4-b8fc-4e4a-a701-24cc04079c16"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1b1743f-0e8a-4e18-90a2-ee8ef3666df1"",
                     ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Run"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0bbd8ea4-494e-4527-8b83-e34165878424"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -136,76 +200,31 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Actions"",
-            ""id"": ""402adc07-4733-439e-bec2-cd2ef3ab31ec"",
+            ""name"": ""Fighting"",
+            ""id"": ""a6531fe9-c26b-4dc9-9036-fd8d1b19ea1a"",
             ""actions"": [
                 {
-                    ""name"": ""Attack"",
+                    ""name"": ""Simple Punch"",
                     ""type"": ""Button"",
-                    ""id"": ""45864042-1e00-41b6-8150-f7867aee4963"",
+                    ""id"": ""451ea876-757b-4ce3-aef6-4444860a7af5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Dash"",
+                    ""name"": ""Dodge Dash"",
                     ""type"": ""Button"",
-                    ""id"": ""0fb7e9cd-2de9-45a5-b5f1-24abcb2163df"",
+                    ""id"": ""b54ae82b-8443-4e00-87a6-1b64919b732a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Block"",
+                    ""name"": ""Simple Block"",
                     ""type"": ""Button"",
-                    ""id"": ""e1b8fcb9-0467-4297-ae2b-8905877911c4"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Focus"",
-                    ""type"": ""Button"",
-                    ""id"": ""e004e46e-4011-43d7-bf5b-b525bc2aa54f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Move Focus Point"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""5326e22a-c2da-4ede-ba23-e9ea8485346d"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Nearest Spawn"",
-                    ""type"": ""Button"",
-                    ""id"": ""2fc6cf32-fbb6-4198-a07f-76fb6441b82f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Random Spawn"",
-                    ""type"": ""Button"",
-                    ""id"": ""6d7dfd31-7af9-4e53-bc07-fe6f3ed88905"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Restart"",
-                    ""type"": ""Button"",
-                    ""id"": ""31261c97-2bdd-4554-a714-2fc125573e77"",
+                    ""id"": ""6255035d-c2df-4d0c-8504-38130d587884"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -215,177 +234,34 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""641ddc74-2493-4aa9-b71e-a46856bb1605"",
-                    ""path"": ""<Keyboard>/leftCtrl"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Block"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3b230fc5-c632-4ffe-be16-05f9c44d43b5"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Focus"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""50f5d8cb-12e5-450c-bb59-c58e939596a8"",
+                    ""id"": ""0d9be74d-0514-4c42-a59c-166ad13fe910"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""Simple Punch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""940af298-7139-4b49-a833-07bc9b113ddd"",
+                    ""id"": ""536dc438-6133-4abc-885e-d26a97a2b8e2"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dash"",
+                    ""action"": ""Dodge Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b57073f0-8892-4aa7-918c-ab3ba4e34061"",
-                    ""path"": ""<Mouse>/scroll"",
+                    ""id"": ""ca565bb6-a38a-4bb4-b17f-6732830736c2"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move Focus Point"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9c7599e2-45a8-4b31-ade1-edecbd07a151"",
-                    ""path"": ""<Keyboard>/n"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Nearest Spawn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5d1c05e6-336c-452f-9512-c85d9ed3a5e1"",
-                    ""path"": ""<Keyboard>/m"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Random Spawn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e0c756a1-e43c-431d-b926-7d80a88fc7c4"",
-                    ""path"": ""<Keyboard>/o"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Restart"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Quality Change"",
-            ""id"": ""dd3c67f4-f3cd-4ff7-b47b-f4c715b07c99"",
-            ""actions"": [
-                {
-                    ""name"": ""Low Quality"",
-                    ""type"": ""Button"",
-                    ""id"": ""54b902a6-6ba2-4f8a-b58e-193901e88c00"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Medium Quality"",
-                    ""type"": ""Button"",
-                    ""id"": ""da505136-9839-4e23-bac8-93255eeec4d9"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""High Quality"",
-                    ""type"": ""Button"",
-                    ""id"": ""f9088d6c-2e56-4fed-a48f-c1885e55b708"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ultra Quality"",
-                    ""type"": ""Button"",
-                    ""id"": ""5116ce2f-4aa1-4f8f-9d15-8a633f46de1d"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""8b413534-4a30-42af-8fca-928398f329da"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Low Quality"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7e75430b-30b4-4dd0-9fba-9ff8655329a3"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Medium Quality"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""676c6324-5fc4-46be-8bf2-3f8fa0bfacc3"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""High Quality"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cbb4f6d7-0363-4351-b82e-1c972d049d9c"",
-                    ""path"": ""<Keyboard>/4"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Ultra Quality"",
+                    ""action"": ""Simple Block"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -399,22 +275,12 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
         m_Controls_Movement = m_Controls.FindAction("Movement", throwIfNotFound: true);
         m_Controls_Rotation = m_Controls.FindAction("Rotation", throwIfNotFound: true);
         m_Controls_Run = m_Controls.FindAction("Run", throwIfNotFound: true);
-        // Actions
-        m_Actions = asset.FindActionMap("Actions", throwIfNotFound: true);
-        m_Actions_Attack = m_Actions.FindAction("Attack", throwIfNotFound: true);
-        m_Actions_Dash = m_Actions.FindAction("Dash", throwIfNotFound: true);
-        m_Actions_Block = m_Actions.FindAction("Block", throwIfNotFound: true);
-        m_Actions_Focus = m_Actions.FindAction("Focus", throwIfNotFound: true);
-        m_Actions_MoveFocusPoint = m_Actions.FindAction("Move Focus Point", throwIfNotFound: true);
-        m_Actions_NearestSpawn = m_Actions.FindAction("Nearest Spawn", throwIfNotFound: true);
-        m_Actions_RandomSpawn = m_Actions.FindAction("Random Spawn", throwIfNotFound: true);
-        m_Actions_Restart = m_Actions.FindAction("Restart", throwIfNotFound: true);
-        // Quality Change
-        m_QualityChange = asset.FindActionMap("Quality Change", throwIfNotFound: true);
-        m_QualityChange_LowQuality = m_QualityChange.FindAction("Low Quality", throwIfNotFound: true);
-        m_QualityChange_MediumQuality = m_QualityChange.FindAction("Medium Quality", throwIfNotFound: true);
-        m_QualityChange_HighQuality = m_QualityChange.FindAction("High Quality", throwIfNotFound: true);
-        m_QualityChange_UltraQuality = m_QualityChange.FindAction("Ultra Quality", throwIfNotFound: true);
+        m_Controls_Crouch = m_Controls.FindAction("Crouch", throwIfNotFound: true);
+        // Fighting
+        m_Fighting = asset.FindActionMap("Fighting", throwIfNotFound: true);
+        m_Fighting_SimplePunch = m_Fighting.FindAction("Simple Punch", throwIfNotFound: true);
+        m_Fighting_DodgeDash = m_Fighting.FindAction("Dodge Dash", throwIfNotFound: true);
+        m_Fighting_SimpleBlock = m_Fighting.FindAction("Simple Block", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -479,6 +345,7 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
     private readonly InputAction m_Controls_Movement;
     private readonly InputAction m_Controls_Rotation;
     private readonly InputAction m_Controls_Run;
+    private readonly InputAction m_Controls_Crouch;
     public struct ControlsActions
     {
         private @PlayerInputScheme m_Wrapper;
@@ -486,6 +353,7 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Controls_Movement;
         public InputAction @Rotation => m_Wrapper.m_Controls_Rotation;
         public InputAction @Run => m_Wrapper.m_Controls_Run;
+        public InputAction @Crouch => m_Wrapper.m_Controls_Crouch;
         public InputActionMap Get() { return m_Wrapper.m_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -504,6 +372,9 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
             @Run.started += instance.OnRun;
             @Run.performed += instance.OnRun;
             @Run.canceled += instance.OnRun;
+            @Crouch.started += instance.OnCrouch;
+            @Crouch.performed += instance.OnCrouch;
+            @Crouch.canceled += instance.OnCrouch;
         }
 
         private void UnregisterCallbacks(IControlsActions instance)
@@ -517,6 +388,9 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
             @Run.started -= instance.OnRun;
             @Run.performed -= instance.OnRun;
             @Run.canceled -= instance.OnRun;
+            @Crouch.started -= instance.OnCrouch;
+            @Crouch.performed -= instance.OnCrouch;
+            @Crouch.canceled -= instance.OnCrouch;
         }
 
         public void RemoveCallbacks(IControlsActions instance)
@@ -535,199 +409,78 @@ public partial class @PlayerInputScheme: IInputActionCollection2, IDisposable
     }
     public ControlsActions @Controls => new ControlsActions(this);
 
-    // Actions
-    private readonly InputActionMap m_Actions;
-    private List<IActionsActions> m_ActionsActionsCallbackInterfaces = new List<IActionsActions>();
-    private readonly InputAction m_Actions_Attack;
-    private readonly InputAction m_Actions_Dash;
-    private readonly InputAction m_Actions_Block;
-    private readonly InputAction m_Actions_Focus;
-    private readonly InputAction m_Actions_MoveFocusPoint;
-    private readonly InputAction m_Actions_NearestSpawn;
-    private readonly InputAction m_Actions_RandomSpawn;
-    private readonly InputAction m_Actions_Restart;
-    public struct ActionsActions
+    // Fighting
+    private readonly InputActionMap m_Fighting;
+    private List<IFightingActions> m_FightingActionsCallbackInterfaces = new List<IFightingActions>();
+    private readonly InputAction m_Fighting_SimplePunch;
+    private readonly InputAction m_Fighting_DodgeDash;
+    private readonly InputAction m_Fighting_SimpleBlock;
+    public struct FightingActions
     {
         private @PlayerInputScheme m_Wrapper;
-        public ActionsActions(@PlayerInputScheme wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Attack => m_Wrapper.m_Actions_Attack;
-        public InputAction @Dash => m_Wrapper.m_Actions_Dash;
-        public InputAction @Block => m_Wrapper.m_Actions_Block;
-        public InputAction @Focus => m_Wrapper.m_Actions_Focus;
-        public InputAction @MoveFocusPoint => m_Wrapper.m_Actions_MoveFocusPoint;
-        public InputAction @NearestSpawn => m_Wrapper.m_Actions_NearestSpawn;
-        public InputAction @RandomSpawn => m_Wrapper.m_Actions_RandomSpawn;
-        public InputAction @Restart => m_Wrapper.m_Actions_Restart;
-        public InputActionMap Get() { return m_Wrapper.m_Actions; }
+        public FightingActions(@PlayerInputScheme wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SimplePunch => m_Wrapper.m_Fighting_SimplePunch;
+        public InputAction @DodgeDash => m_Wrapper.m_Fighting_DodgeDash;
+        public InputAction @SimpleBlock => m_Wrapper.m_Fighting_SimpleBlock;
+        public InputActionMap Get() { return m_Wrapper.m_Fighting; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(ActionsActions set) { return set.Get(); }
-        public void AddCallbacks(IActionsActions instance)
+        public static implicit operator InputActionMap(FightingActions set) { return set.Get(); }
+        public void AddCallbacks(IFightingActions instance)
         {
-            if (instance == null || m_Wrapper.m_ActionsActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_ActionsActionsCallbackInterfaces.Add(instance);
-            @Attack.started += instance.OnAttack;
-            @Attack.performed += instance.OnAttack;
-            @Attack.canceled += instance.OnAttack;
-            @Dash.started += instance.OnDash;
-            @Dash.performed += instance.OnDash;
-            @Dash.canceled += instance.OnDash;
-            @Block.started += instance.OnBlock;
-            @Block.performed += instance.OnBlock;
-            @Block.canceled += instance.OnBlock;
-            @Focus.started += instance.OnFocus;
-            @Focus.performed += instance.OnFocus;
-            @Focus.canceled += instance.OnFocus;
-            @MoveFocusPoint.started += instance.OnMoveFocusPoint;
-            @MoveFocusPoint.performed += instance.OnMoveFocusPoint;
-            @MoveFocusPoint.canceled += instance.OnMoveFocusPoint;
-            @NearestSpawn.started += instance.OnNearestSpawn;
-            @NearestSpawn.performed += instance.OnNearestSpawn;
-            @NearestSpawn.canceled += instance.OnNearestSpawn;
-            @RandomSpawn.started += instance.OnRandomSpawn;
-            @RandomSpawn.performed += instance.OnRandomSpawn;
-            @RandomSpawn.canceled += instance.OnRandomSpawn;
-            @Restart.started += instance.OnRestart;
-            @Restart.performed += instance.OnRestart;
-            @Restart.canceled += instance.OnRestart;
+            if (instance == null || m_Wrapper.m_FightingActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_FightingActionsCallbackInterfaces.Add(instance);
+            @SimplePunch.started += instance.OnSimplePunch;
+            @SimplePunch.performed += instance.OnSimplePunch;
+            @SimplePunch.canceled += instance.OnSimplePunch;
+            @DodgeDash.started += instance.OnDodgeDash;
+            @DodgeDash.performed += instance.OnDodgeDash;
+            @DodgeDash.canceled += instance.OnDodgeDash;
+            @SimpleBlock.started += instance.OnSimpleBlock;
+            @SimpleBlock.performed += instance.OnSimpleBlock;
+            @SimpleBlock.canceled += instance.OnSimpleBlock;
         }
 
-        private void UnregisterCallbacks(IActionsActions instance)
+        private void UnregisterCallbacks(IFightingActions instance)
         {
-            @Attack.started -= instance.OnAttack;
-            @Attack.performed -= instance.OnAttack;
-            @Attack.canceled -= instance.OnAttack;
-            @Dash.started -= instance.OnDash;
-            @Dash.performed -= instance.OnDash;
-            @Dash.canceled -= instance.OnDash;
-            @Block.started -= instance.OnBlock;
-            @Block.performed -= instance.OnBlock;
-            @Block.canceled -= instance.OnBlock;
-            @Focus.started -= instance.OnFocus;
-            @Focus.performed -= instance.OnFocus;
-            @Focus.canceled -= instance.OnFocus;
-            @MoveFocusPoint.started -= instance.OnMoveFocusPoint;
-            @MoveFocusPoint.performed -= instance.OnMoveFocusPoint;
-            @MoveFocusPoint.canceled -= instance.OnMoveFocusPoint;
-            @NearestSpawn.started -= instance.OnNearestSpawn;
-            @NearestSpawn.performed -= instance.OnNearestSpawn;
-            @NearestSpawn.canceled -= instance.OnNearestSpawn;
-            @RandomSpawn.started -= instance.OnRandomSpawn;
-            @RandomSpawn.performed -= instance.OnRandomSpawn;
-            @RandomSpawn.canceled -= instance.OnRandomSpawn;
-            @Restart.started -= instance.OnRestart;
-            @Restart.performed -= instance.OnRestart;
-            @Restart.canceled -= instance.OnRestart;
+            @SimplePunch.started -= instance.OnSimplePunch;
+            @SimplePunch.performed -= instance.OnSimplePunch;
+            @SimplePunch.canceled -= instance.OnSimplePunch;
+            @DodgeDash.started -= instance.OnDodgeDash;
+            @DodgeDash.performed -= instance.OnDodgeDash;
+            @DodgeDash.canceled -= instance.OnDodgeDash;
+            @SimpleBlock.started -= instance.OnSimpleBlock;
+            @SimpleBlock.performed -= instance.OnSimpleBlock;
+            @SimpleBlock.canceled -= instance.OnSimpleBlock;
         }
 
-        public void RemoveCallbacks(IActionsActions instance)
+        public void RemoveCallbacks(IFightingActions instance)
         {
-            if (m_Wrapper.m_ActionsActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_FightingActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IActionsActions instance)
+        public void SetCallbacks(IFightingActions instance)
         {
-            foreach (var item in m_Wrapper.m_ActionsActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_FightingActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_ActionsActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_FightingActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public ActionsActions @Actions => new ActionsActions(this);
-
-    // Quality Change
-    private readonly InputActionMap m_QualityChange;
-    private List<IQualityChangeActions> m_QualityChangeActionsCallbackInterfaces = new List<IQualityChangeActions>();
-    private readonly InputAction m_QualityChange_LowQuality;
-    private readonly InputAction m_QualityChange_MediumQuality;
-    private readonly InputAction m_QualityChange_HighQuality;
-    private readonly InputAction m_QualityChange_UltraQuality;
-    public struct QualityChangeActions
-    {
-        private @PlayerInputScheme m_Wrapper;
-        public QualityChangeActions(@PlayerInputScheme wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LowQuality => m_Wrapper.m_QualityChange_LowQuality;
-        public InputAction @MediumQuality => m_Wrapper.m_QualityChange_MediumQuality;
-        public InputAction @HighQuality => m_Wrapper.m_QualityChange_HighQuality;
-        public InputAction @UltraQuality => m_Wrapper.m_QualityChange_UltraQuality;
-        public InputActionMap Get() { return m_Wrapper.m_QualityChange; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(QualityChangeActions set) { return set.Get(); }
-        public void AddCallbacks(IQualityChangeActions instance)
-        {
-            if (instance == null || m_Wrapper.m_QualityChangeActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_QualityChangeActionsCallbackInterfaces.Add(instance);
-            @LowQuality.started += instance.OnLowQuality;
-            @LowQuality.performed += instance.OnLowQuality;
-            @LowQuality.canceled += instance.OnLowQuality;
-            @MediumQuality.started += instance.OnMediumQuality;
-            @MediumQuality.performed += instance.OnMediumQuality;
-            @MediumQuality.canceled += instance.OnMediumQuality;
-            @HighQuality.started += instance.OnHighQuality;
-            @HighQuality.performed += instance.OnHighQuality;
-            @HighQuality.canceled += instance.OnHighQuality;
-            @UltraQuality.started += instance.OnUltraQuality;
-            @UltraQuality.performed += instance.OnUltraQuality;
-            @UltraQuality.canceled += instance.OnUltraQuality;
-        }
-
-        private void UnregisterCallbacks(IQualityChangeActions instance)
-        {
-            @LowQuality.started -= instance.OnLowQuality;
-            @LowQuality.performed -= instance.OnLowQuality;
-            @LowQuality.canceled -= instance.OnLowQuality;
-            @MediumQuality.started -= instance.OnMediumQuality;
-            @MediumQuality.performed -= instance.OnMediumQuality;
-            @MediumQuality.canceled -= instance.OnMediumQuality;
-            @HighQuality.started -= instance.OnHighQuality;
-            @HighQuality.performed -= instance.OnHighQuality;
-            @HighQuality.canceled -= instance.OnHighQuality;
-            @UltraQuality.started -= instance.OnUltraQuality;
-            @UltraQuality.performed -= instance.OnUltraQuality;
-            @UltraQuality.canceled -= instance.OnUltraQuality;
-        }
-
-        public void RemoveCallbacks(IQualityChangeActions instance)
-        {
-            if (m_Wrapper.m_QualityChangeActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IQualityChangeActions instance)
-        {
-            foreach (var item in m_Wrapper.m_QualityChangeActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_QualityChangeActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public QualityChangeActions @QualityChange => new QualityChangeActions(this);
+    public FightingActions @Fighting => new FightingActions(this);
     public interface IControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
     }
-    public interface IActionsActions
+    public interface IFightingActions
     {
-        void OnAttack(InputAction.CallbackContext context);
-        void OnDash(InputAction.CallbackContext context);
-        void OnBlock(InputAction.CallbackContext context);
-        void OnFocus(InputAction.CallbackContext context);
-        void OnMoveFocusPoint(InputAction.CallbackContext context);
-        void OnNearestSpawn(InputAction.CallbackContext context);
-        void OnRandomSpawn(InputAction.CallbackContext context);
-        void OnRestart(InputAction.CallbackContext context);
-    }
-    public interface IQualityChangeActions
-    {
-        void OnLowQuality(InputAction.CallbackContext context);
-        void OnMediumQuality(InputAction.CallbackContext context);
-        void OnHighQuality(InputAction.CallbackContext context);
-        void OnUltraQuality(InputAction.CallbackContext context);
+        void OnSimplePunch(InputAction.CallbackContext context);
+        void OnDodgeDash(InputAction.CallbackContext context);
+        void OnSimpleBlock(InputAction.CallbackContext context);
     }
 }

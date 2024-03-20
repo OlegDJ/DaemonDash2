@@ -3,12 +3,12 @@
     "maps": [
         {
             "name": "Controls",
-            "id": "6aa0d5c0-4475-4e5f-b282-08cbf452caa3",
+            "id": "997cc764-85d8-41e9-a84b-c80911730c94",
             "actions": [
                 {
                     "name": "Movement",
                     "type": "PassThrough",
-                    "id": "d0fc48a8-5002-4561-b779-7b30064f1630",
+                    "id": "5371732e-64e1-4f68-b403-14680de2a1f6",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -17,26 +17,35 @@
                 {
                     "name": "Rotation",
                     "type": "PassThrough",
-                    "id": "dd600bb6-18c3-4df9-bb8c-175cca0e05ee",
+                    "id": "58ba4233-f9bf-4975-8d65-dd44bc97ffe5",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Run",
                     "type": "Button",
-                    "id": "6dbc22b1-5bea-4d82-8d4d-8230284d2037",
+                    "id": "dcdbc562-384b-49e1-a0c4-0d8653bf5dc3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "87606fe8-9ce7-4274-87e5-22e14263722c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "Keyboard",
-                    "id": "84436fef-45ce-430f-8e38-e726bef5c778",
+                    "id": "93e3b25c-6d31-4420-83d7-e0b9e925fca3",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -47,7 +56,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "c9cd342c-8553-4374-aa8f-7b4c7d9b0b3c",
+                    "id": "97f87e9c-3290-41d6-8b56-3d33589d65dd",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
@@ -58,7 +67,7 @@
                 },
                 {
                     "name": "down",
-                    "id": "1fb71c1c-29e8-4801-8744-5ff75d50124f",
+                    "id": "7479ac0b-b02d-4b67-93ed-ec4fd43f91d9",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
@@ -69,7 +78,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "eed05d95-51d3-4c00-ac5d-dc73d7360770",
+                    "id": "c710af19-034c-4f0d-ba96-4cb50e28f7b0",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -80,7 +89,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "0f42ce8f-a08c-4807-9b87-212fe18342bf",
+                    "id": "e76c42ee-f700-4305-8e93-599be1afe6c2",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -91,10 +100,21 @@
                 },
                 {
                     "name": "",
-                    "id": "86ae703d-e3db-4f5f-a495-e27413e0dee7",
+                    "id": "d15a6cb6-22b7-46b5-8078-0274df7b059f",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone(max=1)",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2127f194-3fda-4c31-8189-df931a1ed76e",
                     "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=0.03,y=0.03)",
+                    "processors": "",
                     "groups": "",
                     "action": "Rotation",
                     "isComposite": false,
@@ -102,8 +122,52 @@
                 },
                 {
                     "name": "",
-                    "id": "696724e9-b83f-4e5c-88b4-5f10d69dc398",
+                    "id": "0392324f-d6a9-4f3c-849d-414768eb66dd",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone(max=1),ScaleVector2(x=15,y=15)",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8a182632-9ba4-41d8-9e07-264ea9e20f56",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d17168e4-b8fc-4e4a-a701-24cc04079c16",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1b1743f-0e8a-4e18-90a2-ee8ef3666df1",
                     "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0bbd8ea4-494e-4527-8b83-e34165878424",
+                    "path": "<Gamepad>/leftStickPress",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -114,76 +178,31 @@
             ]
         },
         {
-            "name": "Actions",
-            "id": "402adc07-4733-439e-bec2-cd2ef3ab31ec",
+            "name": "Fighting",
+            "id": "a6531fe9-c26b-4dc9-9036-fd8d1b19ea1a",
             "actions": [
                 {
-                    "name": "Attack",
+                    "name": "Simple Punch",
                     "type": "Button",
-                    "id": "45864042-1e00-41b6-8150-f7867aee4963",
+                    "id": "451ea876-757b-4ce3-aef6-4444860a7af5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
+                    "name": "Dodge Dash",
                     "type": "Button",
-                    "id": "0fb7e9cd-2de9-45a5-b5f1-24abcb2163df",
+                    "id": "b54ae82b-8443-4e00-87a6-1b64919b732a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Block",
+                    "name": "Simple Block",
                     "type": "Button",
-                    "id": "e1b8fcb9-0467-4297-ae2b-8905877911c4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Focus",
-                    "type": "Button",
-                    "id": "e004e46e-4011-43d7-bf5b-b525bc2aa54f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Move Focus Point",
-                    "type": "PassThrough",
-                    "id": "5326e22a-c2da-4ede-ba23-e9ea8485346d",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Nearest Spawn",
-                    "type": "Button",
-                    "id": "2fc6cf32-fbb6-4198-a07f-76fb6441b82f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Random Spawn",
-                    "type": "Button",
-                    "id": "6d7dfd31-7af9-4e53-bc07-fe6f3ed88905",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Restart",
-                    "type": "Button",
-                    "id": "31261c97-2bdd-4554-a714-2fc125573e77",
+                    "id": "6255035d-c2df-4d0c-8504-38130d587884",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -193,177 +212,34 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "641ddc74-2493-4aa9-b71e-a46856bb1605",
-                    "path": "<Keyboard>/leftCtrl",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Block",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3b230fc5-c632-4ffe-be16-05f9c44d43b5",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Focus",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "50f5d8cb-12e5-450c-bb59-c58e939596a8",
+                    "id": "0d9be74d-0514-4c42-a59c-166ad13fe910",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "Simple Punch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "940af298-7139-4b49-a833-07bc9b113ddd",
+                    "id": "536dc438-6133-4abc-885e-d26a97a2b8e2",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "Dodge Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "b57073f0-8892-4aa7-918c-ab3ba4e34061",
-                    "path": "<Mouse>/scroll",
+                    "id": "ca565bb6-a38a-4bb4-b17f-6732830736c2",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move Focus Point",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9c7599e2-45a8-4b31-ade1-edecbd07a151",
-                    "path": "<Keyboard>/n",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Nearest Spawn",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5d1c05e6-336c-452f-9512-c85d9ed3a5e1",
-                    "path": "<Keyboard>/m",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Random Spawn",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e0c756a1-e43c-431d-b926-7d80a88fc7c4",
-                    "path": "<Keyboard>/o",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Restart",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Quality Change",
-            "id": "dd3c67f4-f3cd-4ff7-b47b-f4c715b07c99",
-            "actions": [
-                {
-                    "name": "Low Quality",
-                    "type": "Button",
-                    "id": "54b902a6-6ba2-4f8a-b58e-193901e88c00",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Medium Quality",
-                    "type": "Button",
-                    "id": "da505136-9839-4e23-bac8-93255eeec4d9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "High Quality",
-                    "type": "Button",
-                    "id": "f9088d6c-2e56-4fed-a48f-c1885e55b708",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Ultra Quality",
-                    "type": "Button",
-                    "id": "5116ce2f-4aa1-4f8f-9d15-8a633f46de1d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "8b413534-4a30-42af-8fca-928398f329da",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Low Quality",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7e75430b-30b4-4dd0-9fba-9ff8655329a3",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Medium Quality",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "676c6324-5fc4-46be-8bf2-3f8fa0bfacc3",
-                    "path": "<Keyboard>/3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "High Quality",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cbb4f6d7-0363-4351-b82e-1c972d049d9c",
-                    "path": "<Keyboard>/4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Ultra Quality",
+                    "action": "Simple Block",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
