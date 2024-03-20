@@ -1,2 +1,2 @@
 # DaemonDash
-Main repository for Daemon Dash Unity3D project.
+The second repository for the second Daemon Dash Unity3D project.
